@@ -186,7 +186,7 @@ def voc_eval(dets_dir_path, ann_path, ovthresh=0.5, N=50, ann_type="voc", use_07
         except KeyError:
             continue
         bbox = np.array([x["bbox"] for x in R])
-        difficult = np.array([x["difficult"] for x in R]).astype(np.bool)
+        difficult = np.array([x["difficult"] for x in R]).astype(bool)
         # difficult = np.array([False for x in R]).astype(np.bool)  # treat all "difficult" as GT
         det = [False] * len(R)
         npos = npos + sum(~difficult)
