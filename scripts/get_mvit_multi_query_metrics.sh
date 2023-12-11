@@ -29,9 +29,9 @@ export PYTHONPATH="./:$PYTHONPATH"
 
 # COCO
 echo "Running inference on COCO"
-python inference/main_mvit_multi_query.py -m "$MODEL_NAME" -i "$DATASET_BASE_DIR/coco/val2017" -c "$CHECKPOINTS_PATH" -tq_list "$TEXT_QUERIES_SET_1"
+python inference/main_mvit_multi_query.py -m "$MODEL_NAME" -i "$DATASET_BASE_DIR/hypersim-coco/images" -c "$CHECKPOINTS_PATH" -tq_list "$TEXT_QUERIES_SET_1"
 echo "Combining detections"
-python utils/combine_detections.py -i "$DATASET_BASE_DIR/coco/$MODEL_NAME"
+python utils/combine_detections.py -i "$DATASET_BASE_DIR/hypersim-coco/$MODEL_NAME"
 
 # KITTI
 #echo "Running inference on KITTI"
