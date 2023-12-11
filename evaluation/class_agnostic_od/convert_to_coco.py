@@ -31,7 +31,7 @@ for image in images_no_ext:
     for box, score in zip(boxes, scores):
         # append detection in coco format
         detections.append({
-            "id": id,
+            "image_id": id,
             "category_id": category_id,
             "bbox": box,
             "score": score
