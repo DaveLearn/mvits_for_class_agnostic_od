@@ -33,7 +33,7 @@ for image in images_no_ext:
         detections.append({
             "image_id": id,
             "category_id": category_id,
-            "bbox": box,
+            "bbox": [box[0], box[1], box[2] - box[0], box[3] - box[1]],
             "score": score
         })
         
